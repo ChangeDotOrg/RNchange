@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, AppRegistry } from 'react-native'
-import Greeting from './src/components/Greeting/Greeting'
+import Scroller from './src/components/ScrollView/ScrollView'
+import Footer from './src/components/Footer/Footer'
+import Header from './src/components/Header/Header'
 // import Blink from './src/components/Blink/Blink'
 // export default class App extends React.Component {
 //   class Greeting extends Component {
@@ -15,11 +17,10 @@ export default class App extends Component {
   render() {
     return (
       // <View style={styles.container}>
-      <View>
-        <Greeting name='Rexxar' />
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+      <View style={{ flex: 1, marginTop: 20 }}>
+        <Header />
+        <Scroller />
+        <Footer />
       </View>
     )
   }
