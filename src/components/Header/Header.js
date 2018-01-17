@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { Text, View, TextInput, Image, Button } from 'react-native'
-
-export default class Header extends Component {
+import { StyleSheet, Text, TextInput } from 'react-native'
+import { Header, Button, Icon, Input } from 'native-base'
+export default class MyHeader extends Component {
   constructor(props) {
     super(props);
+    this.state = { text: '' };
   }
   render() {
 
@@ -11,10 +12,17 @@ export default class Header extends Component {
       alert('header button')
     }
     return (
-      <View style={{}}>
-        <Button title="Header" onPress={headerInfo} color="#841584"
-          accessibilityLabel="Learn more about this purple button" />
-      </View>
+      <Header style={{}}>
+        <Input style={{ height: 30 }}
+          placeholder="Type here"
+          onChangeText={(text) => this.setState({ text })} />
+      </Header>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  text: {
+    color: '#4286f4',
+  },
+})

@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, AppRegistry } from 'react-native'
+import { StyleSheet, View } from 'react-native'
+import { Container, Content, Card, CardItem, Body } from 'native-base'
 import Scroller from './src/components/ScrollView/ScrollView'
-import Footer from './src/components/Footer/Footer'
-import Header from './src/components/Header/Header'
+import MyFooter from './src/components/Footer/Footer'
+import MyHeader from './src/components/Header/Header'
 // import Blink from './src/components/Blink/Blink'
 // export default class App extends React.Component {
 //   class Greeting extends Component {
@@ -18,9 +19,9 @@ export default class App extends Component {
     return (
       // <View style={styles.container}>
       <View style={{ flex: 1, marginTop: 20 }}>
-        <Header />
+        <MyHeader />
         <Scroller />
-        <Footer />
+        <MyFooter />
       </View>
     )
   }

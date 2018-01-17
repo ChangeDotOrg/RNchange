@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Text, View, TextInput, Image, Button } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
+import { Container, Footer, FooterTab, Button, Icon } from 'native-base'
 
-export default class Footer extends Component {
+export default class MyFooter extends Component {
   constructor(props) {
     super(props);
   }
@@ -11,10 +12,36 @@ export default class Footer extends Component {
       alert('footer button')
     }
     return (
-      <View style={{}}>
-        <Button title="Footer" onPress={footerInfo} color="#841584"
-          accessibilityLabel="Learn more about this purple button" />
-      </View>
+      <Footer style={{}}>
+        <FooterTab>
+          <Button vertical accessibilityLabel="Learn more about this purple button">
+            <Icon name="home" />
+            <Text style={styles.text}>Home</Text>
+          </Button>
+          <Button vertical accessibilityLabel="Learn more about this purple button">
+            <Icon name="apps" />
+            <Text style={styles.text}>Apps</Text>
+          </Button>
+          <Button vertical accessibilityLabel="Learn more about this purple button">
+            <Icon name="camera" />
+            <Text style={styles.text}>Camera</Text>
+          </Button>
+          <Button vertical active accessibilityLabel="Learn more about this purple button">
+            <Icon active name="navigate" />
+            <Text style={styles.text}>Navigate</Text>
+          </Button>
+          <Button vertical accessibilityLabel="Learn more about this purple button">
+            <Icon name="person" />
+            <Text style={styles.text}>Contacts</Text>
+          </Button>
+        </FooterTab>
+      </Footer>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  text: {
+    color: '#4286f4',
+  },
+})
