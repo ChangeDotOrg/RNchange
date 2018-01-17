@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import { StyleSheet, Text, View, AppRegistry } from 'react-native';
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
 
 export default class Blink extends Component {
   constructor(props) {
     super(props);
-    this.state = {isShowingText: true};
+    this.state = { isShowingText: true };
 
     // Toggle the state every second
     setInterval(() => {
@@ -12,5 +12,12 @@ export default class Blink extends Component {
         return { isShowingText: !previousState.isShowingText };
       });
     }, 1000);
+  }
+
+  render() {
+    let display = this.state.isShowingText ? this.props.text : ' ';
+    return (
+      <Text>{display}</Text>
+    );
   }
 }
